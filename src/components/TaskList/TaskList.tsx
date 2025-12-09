@@ -1,16 +1,22 @@
-// import React from "react";
-// import { useState } from "react";
-// import type { TaskFilterProps, TaskListProps } from "../types";
+import React from "react";
+import type { TaskListProps } from "../types";
+import { TaskItem } from "../TaskItem/TaskItem";
 
-// export const TaskList: React.FC<TaskListProps> = ({
-// tasks,
-// onStatusChange,
-// onDelete
-// }) => {
-// const [task, setTask] = useState<Task[]>(allTasks);
-// const [filters, setFilters] = useState<{ status?: TaskStatus; priority?: 'low'|'medium'|'high'}>({});
-
-//     return (
-//         <></>
-//     )
-// }
+export const TaskList: React.FC<TaskListProps> = ({
+  tasks,
+  onStatusChange,
+  onDelete,
+}) => {
+  return (
+    <div className="flex flex-col gap-4">
+      {tasks.map((task) => (
+        <TaskItem
+          key={task.id}
+          task={task}
+          onStatusChange={onStatusChange}
+          onDelete={onDelete}
+        />
+      ))}
+    </div>
+  );
+};
