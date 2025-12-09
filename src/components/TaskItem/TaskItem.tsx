@@ -1,5 +1,5 @@
 import React from "react";
-import type { TaskItemProps } from "../types";
+import type { TaskItemProps, TaskStatus } from "../types";
 
 export const TaskItem: React.FC<TaskItemProps> = ({
   task,
@@ -30,14 +30,23 @@ export const TaskItem: React.FC<TaskItemProps> = ({
           </span>
           <span className="text-gray-400 ml-2">Due: {task.dueDate}</span>
         </p>
-        </div>
-        <button
-          className="text-md text-red-600"
-          onClick={() => onDelete(task.id)}
-        >
-          Delete
-        </button>
-     
+      </div>
+      {/* Status selector */}
+      <select
+        value={task.status}
+        onChange={(e) => onStatusChange(task.id, e.target.value as TaskStatus)}
+        className="bg-gray-800 text-white px-2 py-1 rounded ml-auto"
+      >
+        <option value="pending">Pending</option>
+        <option value="in-progress">In-progress</option>
+        <option value="completed">Completed</option>
+      </select>
+      <button
+        className="text-md text-red-600"
+        onClick={() => onDelete(task.id)}
+      >
+        Delete
+      </button>
     </div>
   );
 };

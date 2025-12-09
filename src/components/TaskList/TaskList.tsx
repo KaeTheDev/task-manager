@@ -7,6 +7,9 @@
 // onStatusChange,
 // onDelete
 // }) => {
+// const [task, setTask] = useState<Task[]>(allTasks);
+// const [filters, setFilters] = useState<{ status?: TaskStatus; priority?: 'low'|'medium'|'high'}>({});
+
 //     return (
 //         <></>
 //     )
