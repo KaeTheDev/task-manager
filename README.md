@@ -73,7 +73,7 @@ This lab works on:
 
 1. Clone the repository:
 
-git clone [<repository-url>](https://github.com/KaeTheDev/task-manager.git)
+git clone https://github.com/KaeTheDev/task-manager.git
 
 2. Navigate into the project folder:
 
